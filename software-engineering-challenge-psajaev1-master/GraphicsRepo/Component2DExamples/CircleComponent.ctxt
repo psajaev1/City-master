@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=x\ y\ d
+comment0.target=CircleComponent(int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ takes\ x,y,d\r\n\ d\ is\ used\ for\ both\ width\ and\ height\r\n
+comment1.params=g
+comment1.target=void\ paintComponent(java.awt.Graphics)
+comment2.params=
+comment2.target=void\ nextFrame()
+numComments=3
