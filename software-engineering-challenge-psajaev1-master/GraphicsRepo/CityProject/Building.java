@@ -37,7 +37,7 @@ public class Building extends JComponent
      * @return    description of the return value
      */
     public void draw (Graphics page){
-    
+        // draws the building
    
 
      page.setColor (color);
@@ -45,10 +45,13 @@ public class Building extends JComponent
       // head
      page.drawRect(Xposition, Yposition, 50,100);
      //       two numbers above are length, width
-     for (int i = 0; i < 10; i++){
-         page.drawRect(Xposition + (i * 10),Yposition + (i * 10),5,10);
-        }
- 
-     
+     for (int i = 0; i <= 4; i++){// loop to make windows
+         page.drawRect(Xposition + i * 10,Yposition,5,7);
+         for (int j = 0; j <= 9; j++){
+             page.drawRect(Xposition, Yposition + j * 10, 5, 7);
+            
+            
+            }
+    }
     }
 }

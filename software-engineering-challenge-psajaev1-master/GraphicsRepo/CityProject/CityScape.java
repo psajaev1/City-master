@@ -116,7 +116,7 @@ public class CityScape extends JApplet implements Runnable
         page.setColor(Color.YELLOW);
         page.fillOval(x - radius/2,y - radius/2,radius,radius);
         
-        building1.draw (page);
+   //     building1.draw (page);
         building2.draw (page);
         building3.draw (page);
         building4.draw (page);
