@@ -21,12 +21,20 @@ public class CityScape extends JApplet implements Runnable
     private int dy = 50;
     private int radius = 40;
     
+   
+    
     private Building building1;
     private Building building2;
     private Building building3;
     private Building building4;
     private Building building5;
     private Building building6;
+    
+    private Ground ground;
+    private Ground ground1;
+    
+    
+    private Street street1;
     
     
     /**
@@ -40,18 +48,28 @@ public class CityScape extends JApplet implements Runnable
         // including some versions of Netscape & Internet Explorer which do 
         // not allow access to the AWT system event queue which JApplets do 
         // on startup to check access. May not be necessary with your browser. 
-        JRootPane rootPane = this.getRootPane();    
-       rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
+      //  JRootPane rootPane = this.getRootPane();    
+       // rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
     
         // provide any initialisation necessary for your JApplet
         // 1st number = XPosition
         // 2nd number = YPosition
-        building1 = new Building ( 50,500,Color.red);
-        building2 = new Building ( 75,200,Color.blue);
-        building3 = new Building ( 150,200,Color.green);
-        building4 = new Building ( 225,200,Color.blue);
-        building5 = new Building ( 300,200,Color.blue);
-        building6 = new Building ( 375,200,Color.blue);
+        // lower the number, the higher the starting position,
+        // number entered is the starting position at the top
+    
+        
+        building1 = new Building ( 25,100,50,300,Color.red);
+        building2 = new Building ( 100,200,60,200,Color.blue);
+        building3 = new Building ( 175,150,40,250,Color.green);
+        building4 = new Building ( 250,100,50,300,Color.magenta);
+        building5 = new Building ( 325,200,60,200,Color.red);
+        building6 = new Building ( 400,150,40,250,Color.magenta);
+        ground = new Ground(0,400,1000,200,Color.gray);
+        ground1 = new Ground(0,450,1000,10,Color.yellow);
+        
+        street1 = new Street (0,425, 50 ,5,Color.white);
+        //setBackground(Color.cyan); 
+      
         
     }
 
@@ -64,6 +82,7 @@ public class CityScape extends JApplet implements Runnable
     {
        Thread thread = new Thread(this);
        thread.start();// calls the run method
+     
         
     }
     
@@ -77,6 +96,7 @@ public class CityScape extends JApplet implements Runnable
            x += dx;
            y = dy;
            
+        
            repaint();
            
            try{
@@ -109,20 +129,28 @@ public class CityScape extends JApplet implements Runnable
      */
     public void paint(Graphics page)
     {
-        page.setColor(Color.WHITE);
+        getContentPane().setBackground(Color.cyan); 
+       // setBackground(Color.blue);
+        page.setColor(Color.cyan);
         // sets up the circle
         page.fillOval(ox - radius/2,oy - radius/2,radius,radius);
         
         page.setColor(Color.YELLOW);
         page.fillOval(x - radius/2,y - radius/2,radius,radius);
         
-   //     building1.draw (page);
+   
+        building1.draw (page);
         building2.draw (page);
         building3.draw (page);
         building4.draw (page);
         building5.draw (page);
         building6.draw (page);
         
+        ground.draw(page);
+        ground1.draw(page);
+        street1.draw(page);
+       
+      //getContentPane().setBackground(Color.black); 
     }
 
     /**
