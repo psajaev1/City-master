@@ -2,9 +2,9 @@
 import java.awt.*;
 import javax.swing.JComponent;
 /**
- * Write a description of class Ground here.
+ * Class Ground - Creates the Ground
  * 
- * @author (your name) 
+ * Phillip Sajaev
  * @version (a version number or a date)
  */
 public class Ground
@@ -16,7 +16,7 @@ public class Ground
     private Color color;
 
     /**
-     * Default constructor for objects of class Ground
+     * Constructor for objects of class Ground
      */
     public Ground(int positionx,int positiony, int length, int width, Color shade)
     {
@@ -28,15 +28,8 @@ public class Ground
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * param - page(Graphics)
+     * Draws the ground
      */
     public void draw (Graphics page){
         page.setColor (color);

@@ -2,10 +2,9 @@
 import java.awt.*;
 import javax.swing.JComponent;
 /**
- * Write a description of class Ground here.
+ * Class Ground - Draw the Ground
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Phillip Sajaev
  */
 public class Street
 {
@@ -16,7 +15,7 @@ public class Street
     private Color color;
 
     /**
-     * Default constructor for objects of class Ground
+     * Constructor for objects of class Ground
      */
     public Street(int positionx,int positiony, int length, int width, Color shade)
     {
@@ -28,23 +27,16 @@ public class Street
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * param - page 
+     * Draws the white rectangles on the street
      */
     public void draw (Graphics page){
         page.setColor (color);
         
-        for (int i = 0; i <=2; i++){
+        for (int i = 0; i <=2; i++){// creates two rows 
             page.drawRect(xPosition ,yPosition + i * 50 , xLength, yLength);
             page.fillRect(xPosition ,yPosition + i * 50 , xLength, yLength);
-            for(int j = 0; j <=4; j++){
+            for(int j = 0; j <=4; j++){// creates 4 columns
                 page.drawRect(xPosition + j*  100, yPosition + i*50, xLength,yLength);
                 page.fillRect(xPosition + j*  100, yPosition + i*50, xLength,yLength);
             }
